@@ -56,9 +56,14 @@ namespace XYZ_Teleport_1._17._0
         }
         public float DistanceTo(Vec3 _Vec3)
         {
-            float diff_x = x - _Vec3.x;
-            float diff_y = y - _Vec3.y;
-            float diff_z = z - _Vec3.z;
+            float diff_x = x - _Vec3.x, diff_y = y - _Vec3.y, diff_z = z - _Vec3.z;
+            float output = (float)Math.Sqrt(diff_x * diff_x + diff_y * diff_y + diff_z * diff_z);
+            if ((int)output == 0) output = _Vec3.Distance(this);
+            return output;
+        }
+        public float Distance(Vec3 _Vec3)
+        {
+            float diff_x = x - _Vec3.x, diff_y = y - _Vec3.y, diff_z = z - _Vec3.z;
             return (float)Math.Sqrt(diff_x * diff_x + diff_y * diff_y + diff_z * diff_z);
         }
         public override string ToString()

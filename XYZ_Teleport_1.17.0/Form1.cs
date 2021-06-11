@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace XYZ_Teleport_1._17._0
@@ -19,6 +14,21 @@ namespace XYZ_Teleport_1._17._0
             InitializeComponent();
             handle = this;
             mem = new Mem();
+
+
+            new Thread(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+                while (true)
+                {
+                    if (recallRecordingEnabled && mem != null)
+                    {
+                        Vec3 _Vec3 = Game.position;
+                        recallList.Add(_Vec3);
+                        Thread.Sleep(1);
+                    }
+                }
+            }).Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +53,41 @@ namespace XYZ_Teleport_1._17._0
                     textBox2.Text = Game.position.ToString();
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = new Vec3(textBox2.Text).DistanceTo(new Vec3(textBox3.Text)).ToString();
+        }
+
+        bool recallRecordingEnabled = false;
+        List<Vec3> recallList = new List<Vec3>();
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (recallRecordingEnabled)
+            {
+                recallList.Reverse();
+                button3.Text = "Start recording";
+            }
+            else
+            {
+                recallList.Clear();
+                button3.Text = "Stop...";
+            }
+            recallRecordingEnabled = !recallRecordingEnabled;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Thread(() =>
+            {
+                foreach (Vec3 pos in recallList)
+                {
+                    Game.teleport(pos);
+                    Thread.Sleep(1);
+                }
+            }).Start();
         }
     }
 }
