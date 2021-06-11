@@ -17,7 +17,7 @@ namespace XYZ_Teleport_1._17._0
             Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 12).ToString("X"), "float", (x + 0.6f).ToString());
 
             Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 4).ToString("X"), "float", (y).ToString());
-            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 16).ToString("X"), "float", (y + 0.6f).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 16).ToString("X"), "float", (y + 1.8f).ToString());
 
             Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 8).ToString("X"), "float", (z).ToString());
             Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 20).ToString("X"), "float", (z + 0.6f).ToString());
