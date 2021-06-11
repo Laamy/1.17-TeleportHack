@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XYZ_Teleport_1._17._0
 {
     class Game
     {
-        static string localPlayer = "Minecraft.Windows.exe+03FFFA98,0,50,138,";
-        static int localPlayer_XPosition = 0x4D0;
+        public static string localPlayer = "Minecraft.Windows.exe+03FFFA98,0,50,138,";
+        public static int localPlayer_XPosition = 0x4D0;
 
         public static void teleport(float x, float y, float z)
         {

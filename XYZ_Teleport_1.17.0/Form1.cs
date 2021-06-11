@@ -89,5 +89,26 @@ namespace XYZ_Teleport_1._17._0
                 }
             }).Start();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            recallList.Reverse();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            mem.WriteMemory(Game.localPlayer + (Game.localPlayer_XPosition + 16).ToString("X"), "float", Game.position.y.ToString());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Game.teleport(new Vec3(Game.position.x, Game.position.y - 3.6f, Game.position.z));
+            mem.WriteMemory(Game.localPlayer + (Game.localPlayer_XPosition + 4).ToString("X"), "float", (Game.position.y + 3.6f).ToString());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Game.teleport(Game.position);
+        }
     }
 }
