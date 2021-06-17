@@ -61,9 +61,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 70);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(3, 36);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Teleport";
             this.button1.UseVisualStyleBackColor = true;
@@ -71,9 +72,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Location = new System.Drawing.Point(3, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(109, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "0, 0, 0";
             // 
@@ -84,17 +86,18 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(115, 99);
+            this.groupBox1.Size = new System.Drawing.Size(115, 84);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Teleportation";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 45);
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox2.Location = new System.Drawing.Point(3, 59);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(109, 20);
             this.textBox2.TabIndex = 5;
             // 
             // timer1
@@ -106,37 +109,40 @@ namespace XYZ_Teleport_1._17._0
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 117);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Location = new System.Drawing.Point(12, 102);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(115, 130);
+            this.groupBox2.Size = new System.Drawing.Size(115, 103);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Distance Calculator";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 100);
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox5.Location = new System.Drawing.Point(3, 79);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(109, 20);
             this.textBox5.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 19);
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox3.Location = new System.Drawing.Point(3, 16);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(109, 20);
             this.textBox3.TabIndex = 5;
             this.textBox3.Text = "0, 0, 0";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 71);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(3, 56);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.Size = new System.Drawing.Size(109, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Calculate";
             this.button2.UseVisualStyleBackColor = true;
@@ -144,9 +150,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 45);
+            this.textBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox4.Location = new System.Drawing.Point(3, 36);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(109, 20);
             this.textBox4.TabIndex = 4;
             this.textBox4.Text = "0, 0, 0";
             // 
@@ -157,16 +164,17 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Location = new System.Drawing.Point(145, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(115, 105);
+            this.groupBox3.Size = new System.Drawing.Size(115, 89);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Recall";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(6, 74);
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Location = new System.Drawing.Point(3, 62);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 23);
+            this.button5.Size = new System.Drawing.Size(109, 23);
             this.button5.TabIndex = 7;
             this.button5.Text = "Reverse";
             this.button5.UseVisualStyleBackColor = true;
@@ -174,9 +182,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(6, 45);
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(3, 39);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 23);
+            this.button4.Size = new System.Drawing.Size(109, 23);
             this.button4.TabIndex = 6;
             this.button4.Text = "Replay";
             this.button4.UseVisualStyleBackColor = true;
@@ -184,9 +193,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 16);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(3, 16);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
+            this.button3.Size = new System.Drawing.Size(109, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Start recording";
             this.button3.UseVisualStyleBackColor = true;
@@ -197,18 +207,19 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Location = new System.Drawing.Point(145, 123);
+            this.groupBox4.Location = new System.Drawing.Point(145, 107);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(115, 105);
+            this.groupBox4.Size = new System.Drawing.Size(115, 89);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hitbox Settings";
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(6, 74);
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(3, 62);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 23);
+            this.button6.Size = new System.Drawing.Size(109, 23);
             this.button6.TabIndex = 7;
             this.button6.Text = "Fix Hitbox";
             this.button6.UseVisualStyleBackColor = true;
@@ -216,9 +227,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(6, 45);
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.Location = new System.Drawing.Point(3, 39);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 23);
+            this.button7.Size = new System.Drawing.Size(109, 23);
             this.button7.TabIndex = 6;
             this.button7.Text = "Noclip Mode";
             this.button7.UseVisualStyleBackColor = true;
@@ -226,9 +238,10 @@ namespace XYZ_Teleport_1._17._0
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(6, 16);
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.Location = new System.Drawing.Point(3, 16);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 23);
+            this.button8.Size = new System.Drawing.Size(109, 23);
             this.button8.TabIndex = 3;
             this.button8.Text = "Phase Mode";
             this.button8.UseVisualStyleBackColor = true;
@@ -241,7 +254,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox5.Controls.Add(this.button11);
             this.groupBox5.Location = new System.Drawing.Point(266, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(115, 225);
+            this.groupBox5.Size = new System.Drawing.Size(115, 200);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Waypoints";
@@ -270,7 +283,7 @@ namespace XYZ_Teleport_1._17._0
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.treeView1.Location = new System.Drawing.Point(3, 59);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(109, 162);
+            this.treeView1.Size = new System.Drawing.Size(109, 137);
             this.treeView1.TabIndex = 5;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
@@ -278,7 +291,7 @@ namespace XYZ_Teleport_1._17._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 260);
+            this.ClientSize = new System.Drawing.Size(396, 223);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
