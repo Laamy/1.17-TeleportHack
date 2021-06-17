@@ -45,10 +45,20 @@ namespace XYZ_Teleport_1._17._0
         }
         public Vec3(string position)
         {
-            string[] parsedStr = position.Replace(" ", "").Split(',');
-            this.x = Convert.ToSingle(parsedStr[0]);
-            this.y = Convert.ToSingle(parsedStr[1]);
-            this.z = Convert.ToSingle(parsedStr[2]);
+            try
+            {
+                string[] parsedStr = position.Replace(" ", "").Split(',');
+                this.x = Convert.ToSingle(parsedStr[0]);
+                this.y = Convert.ToSingle(parsedStr[1]);
+                this.z = Convert.ToSingle(parsedStr[2]);
+            }
+            catch
+            {
+                string[] parsedStr = position.Replace(" ", "").Split(',');
+                this.x = HexHandler._toInt(parsedStr[0]);
+                this.y = HexHandler._toInt(parsedStr[1]);
+                this.z = HexHandler._toInt(parsedStr[2]);
+            }
         }
         public float DistanceTo(Vec3 _Vec3)
         {

@@ -129,5 +129,10 @@ namespace XYZ_Teleport_1._17._0
             treeView1.Nodes.Add(lab);
         }
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) => Game.teleport(new Vec3(e.Node.Tag.ToString()));
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
