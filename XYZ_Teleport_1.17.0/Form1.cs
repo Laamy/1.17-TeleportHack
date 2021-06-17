@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -14,7 +15,6 @@ namespace XYZ_Teleport_1._17._0
             InitializeComponent();
             handle = this;
             mem = new Mem();
-
 
             new Thread(() =>
             {
@@ -110,5 +110,24 @@ namespace XYZ_Teleport_1._17._0
         {
             Game.teleport(Game.position);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            TreeNode lab = new TreeNode();
+            lab.Tag = Game.position.ToString();
+            lab.Text = textBox6.Text;
+            treeView1.Nodes.Add(lab);
+        }
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) => Game.teleport(new Vec3(e.Node.Tag.ToString()));
     }
 }
