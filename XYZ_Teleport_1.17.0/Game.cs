@@ -4,19 +4,19 @@ namespace XYZ_Teleport_1._17._0
 {
     class Game
     {
-        public static string localPlayer = "Minecraft.Windows.exe+03FFFA98,0,50,138,";
-        public static int localPlayer_XPosition = 0x4D0;
+        public static string localPlayer = "base+03FFFA98,0,50,138,";
+        public static string localPlayer_XPosition = "4D0";
 
         public static void teleport(float x, float y, float z)
         {
-            Form1.handle.mem.WriteMemory(localPlayer + localPlayer_XPosition.ToString("X"), "float", (x).ToString());
-            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 12).ToString("X"), "float", (x + 0.6f).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + HexHandler.ath(localPlayer_XPosition, 0), "float", (x).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + HexHandler.ath(localPlayer_XPosition, 12), "float", (x + 0.6f).ToString());
 
-            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 4).ToString("X"), "float", (y).ToString());
-            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 16).ToString("X"), "float", (y + 1.8f).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + HexHandler.ath(localPlayer_XPosition, 4), "float", (y).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + HexHandler.ath(localPlayer_XPosition, 16), "float", (y + 1.8f).ToString());
 
-            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 8).ToString("X"), "float", (z).ToString());
-            Form1.handle.mem.WriteMemory(localPlayer + (localPlayer_XPosition + 20).ToString("X"), "float", (z + 0.6f).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + HexHandler.ath(localPlayer_XPosition, 8), "float", (z).ToString());
+            Form1.handle.mem.WriteMemory(localPlayer + HexHandler.ath(localPlayer_XPosition, 20), "float", (z + 0.6f).ToString());
         }
 
         public static void teleport(Vec3 _Vec3) => teleport(_Vec3.x, _Vec3.y, _Vec3.z);
@@ -25,9 +25,9 @@ namespace XYZ_Teleport_1._17._0
         {
             get
             {
-                return new Vec3(Form1.handle.mem.ReadFloat(localPlayer + (localPlayer_XPosition).ToString("X")) + "," +
-                    Form1.handle.mem.ReadFloat(localPlayer + (localPlayer_XPosition + 4).ToString("X")) + "," +
-                    Form1.handle.mem.ReadFloat(localPlayer + (localPlayer_XPosition + 8).ToString("X")));
+                return new Vec3(Form1.handle.mem.ReadFloat(localPlayer + HexHandler.ath(localPlayer_XPosition, 0)) + "," +
+                    Form1.handle.mem.ReadFloat(localPlayer + HexHandler.ath(localPlayer_XPosition, 4)) + "," +
+                    Form1.handle.mem.ReadFloat(localPlayer + HexHandler.ath(localPlayer_XPosition, 8)));
             }
         }
     }
