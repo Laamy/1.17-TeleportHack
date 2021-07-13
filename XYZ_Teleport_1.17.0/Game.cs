@@ -4,7 +4,7 @@ namespace XYZ_Teleport_1._17._0
 {
     class Game
     {
-        public static string localPlayer = "base+04020228,0,18,B8,";
+        public static string localPlayer = "base+041215B8,0,50,138,";
         public static string localPlayer_XPosition = "4D0";
 
         public static void teleport(float x, float y, float z)
