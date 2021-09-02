@@ -52,11 +52,17 @@ namespace XYZ_Teleport_1._17._0
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minecraftVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VersionListItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -84,7 +90,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(115, 84);
             this.groupBox1.TabIndex = 5;
@@ -112,7 +118,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Location = new System.Drawing.Point(12, 102);
+            this.groupBox2.Location = new System.Drawing.Point(12, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(115, 103);
             this.groupBox2.TabIndex = 6;
@@ -162,7 +168,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Location = new System.Drawing.Point(145, 12);
+            this.groupBox3.Location = new System.Drawing.Point(145, 29);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(115, 89);
             this.groupBox3.TabIndex = 6;
@@ -207,7 +213,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Location = new System.Drawing.Point(145, 107);
+            this.groupBox4.Location = new System.Drawing.Point(145, 124);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(115, 89);
             this.groupBox4.TabIndex = 8;
@@ -252,7 +258,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox5.Controls.Add(this.treeView1);
             this.groupBox5.Controls.Add(this.textBox6);
             this.groupBox5.Controls.Add(this.button11);
-            this.groupBox5.Location = new System.Drawing.Point(266, 12);
+            this.groupBox5.Location = new System.Drawing.Point(266, 29);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(115, 200);
             this.groupBox5.TabIndex = 8;
@@ -288,17 +294,59 @@ namespace XYZ_Teleport_1._17._0
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.minecraftVersionToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(396, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // minecraftVersionToolStripMenuItem
+            // 
+            this.minecraftVersionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.VersionListItem});
+            this.minecraftVersionToolStripMenuItem.Name = "minecraftVersionToolStripMenuItem";
+            this.minecraftVersionToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.minecraftVersionToolStripMenuItem.Text = "Settings";
+            // 
+            // VersionListItem
+            // 
+            this.VersionListItem.Name = "VersionListItem";
+            this.VersionListItem.Size = new System.Drawing.Size(180, 22);
+            this.VersionListItem.Text = "Version";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 217);
+            this.ClientSize = new System.Drawing.Size(396, 239);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Laamys teleporting plz stfu :cry:";
@@ -311,7 +359,10 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -338,6 +389,11 @@ namespace XYZ_Teleport_1._17._0
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minecraftVersionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem VersionListItem;
     }
 }
 

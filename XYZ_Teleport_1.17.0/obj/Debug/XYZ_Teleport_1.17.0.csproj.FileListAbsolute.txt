@@ -1,0 +1,10 @@
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\bin\Debug\XYZ_Teleport_1.17.0.exe.config
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\bin\Debug\XYZ_Teleport_1.17.0.exe
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\bin\Debug\XYZ_Teleport_1.17.0.pdb
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1.17.0.csproj.AssemblyReference.cache
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1._17._0.Form1.resources
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1._17._0.Properties.Resources.resources
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1.17.0.csproj.GenerateResource.cache
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1.17.0.csproj.CoreCompileInputs.cache
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1.17.0.exe
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\Debug\XYZ_Teleport_1.17.0.pdb
