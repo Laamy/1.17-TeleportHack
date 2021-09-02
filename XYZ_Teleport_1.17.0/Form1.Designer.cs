@@ -57,6 +57,9 @@ namespace XYZ_Teleport_1._17._0
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minecraftVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VersionListItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.killGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crashGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -308,7 +311,10 @@ namespace XYZ_Teleport_1._17._0
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.killGameToolStripMenuItem,
+            this.crashGameToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -333,6 +339,25 @@ namespace XYZ_Teleport_1._17._0
             this.VersionListItem.Name = "VersionListItem";
             this.VersionListItem.Size = new System.Drawing.Size(180, 22);
             this.VersionListItem.Text = "Version";
+            // 
+            // killGameToolStripMenuItem
+            // 
+            this.killGameToolStripMenuItem.Name = "killGameToolStripMenuItem";
+            this.killGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.killGameToolStripMenuItem.Text = "Kill Game";
+            this.killGameToolStripMenuItem.Click += new System.EventHandler(this.killGameToolStripMenuItem_Click);
+            // 
+            // crashGameToolStripMenuItem
+            // 
+            this.crashGameToolStripMenuItem.Name = "crashGameToolStripMenuItem";
+            this.crashGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crashGameToolStripMenuItem.Text = "Crash Game";
+            this.crashGameToolStripMenuItem.Click += new System.EventHandler(this.crashGameToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // Form1
             // 
@@ -394,6 +419,9 @@ namespace XYZ_Teleport_1._17._0
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minecraftVersionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VersionListItem;
+        private System.Windows.Forms.ToolStripMenuItem killGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crashGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

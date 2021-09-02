@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -117,7 +118,15 @@ namespace XYZ_Teleport_1._17._0
             foreach (IVersion version in VersionClass.versions)
             {
                 ToolStripMenuItem item = new ToolStripMenuItem(version.name);
+
+                if (version == VersionClass.versions[0])
+                {
+                    item.Text = item.Text + " (Current)";
+                }
+
+                item.Tag = version.name;
                 item.Click += versionSwitched;
+
                 VersionListItem.DropDownItems.Add(item);
             }
         }
@@ -128,9 +137,16 @@ namespace XYZ_Teleport_1._17._0
 
             foreach (IVersion v in VersionClass.versions)
             {
-                if (v.name == tagValue.Text)
+                if (v.name == tagValue.Tag.ToString())
                 {
-                    VersionClass.setVersion(v);
+                    VersionClass.setVersion(v); // Load verison
+
+                    foreach (ToolStripItem c in VersionListItem.DropDownItems)
+                    {
+                        c.Text = c.Tag.ToString();
+                    }
+
+                    tagValue.Text = tagValue.Tag.ToString() + " (Current)";
                 }
             }
         }
@@ -142,12 +158,32 @@ namespace XYZ_Teleport_1._17._0
             lab.Text = textBox6.Text;
             treeView1.Nodes.Add(lab);
         }
+
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e) => Game.teleport(new Vector3(e.Node.Tag.ToString()));
+
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e) => treeView1.Nodes.Remove(e.Node);
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void killGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process MinecraftProcess = Process.GetProcessesByName("Minecraft.Windows")[0];
+            if (MinecraftProcess != null)
+                MinecraftProcess.Kill();
+
+            Process ApplicationHost = Process.GetProcessesByName("ApplicationFrameHost")[0]; // Kill main window aswell so it instantly closes
+            if (ApplicationHost != null)
+                ApplicationHost.Kill();
+        }
+
+        private void crashGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process MinecraftProcess = Process.GetProcessesByName("Minecraft.Windows")[0];
+            if (MinecraftProcess != null)
+                MinecraftProcess.Kill();
         }
     }
 }
