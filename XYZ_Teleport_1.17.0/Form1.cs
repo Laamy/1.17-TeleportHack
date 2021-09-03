@@ -309,12 +309,17 @@ namespace XYZ_Teleport_1._17._0
                     {
                         if (e.key == (Keys)list[2].ToCharArray()[0])
                         {
-                            if (list[1].ToLower() == "s" || list[1].ToLower() == "0" || list[1].ToLower() == "survival")
-                                Game.gamemode = 0;
-                            else if (list[1].ToLower() == "c" || list[1].ToLower() == "1" || list[1].ToLower() == "creative")
-                                Game.gamemode = 1;
-                            else if (list[1].ToLower() == "a" || list[1].ToLower() == "2" || list[1].ToLower() == "adventure")
-                                Game.gamemode = 2;
+                            List<List<string>> registery;
+                            new GamemodeRegistery(out registery);
+                            for (int i = 0; i < registery.Count;) // Loop through gamemode registery
+                            {
+                                foreach (string str in registery[i])
+                                {
+                                    if (list[1].ToLower() == str)
+                                        Game.gamemode = i;
+                                }
+                                ++i;
+                            }
                         }
                     }
                 }

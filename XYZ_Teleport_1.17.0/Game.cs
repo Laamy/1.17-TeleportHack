@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace XYZ_Teleport_1._17._0
 {
@@ -69,6 +70,94 @@ namespace XYZ_Teleport_1._17._0
             }
         }
     }
+
+    public class GamemodeRegistery
+    {
+        private List<List<string>> registery = new List<List<string>> {
+            new List<string> // Survival
+            {
+                "0",
+                "s",
+                "survival"
+            },
+            new List<string> // Creative
+            {
+                "1",
+                "c",
+                "creative"
+            },
+            new List<string> // Adventure
+            {
+                "2",
+                "a",
+                "adventure"
+            }
+        }; // Gamemode Registery
+
+        public GamemodeRegistery(out List<List<string>> list)
+        {
+            list = registery;
+        }
+    }
+
+    /*public class ItemRegistery // Not used nor will be just thinking of an example :thinking:
+    {
+        private List<List<object>> registery = new List<List<object>> {
+            new List<object> // Air
+            {
+                true, // isValid
+                new List<object> // Names
+                {
+                    "0",
+                    "air",
+                    "minecraft:air"
+                },
+                new List<object> // Variants
+                {
+                    new string[] { // air { ID : 0 }
+                        "0",
+                        "air"
+                    }
+                }
+            }, // Id 0
+            new List<object> // Stone
+            {
+                true, // isValid
+                new List<object> // Names
+                {
+                    "1",
+                    "stone",
+                    "minecraft:stone"
+                },
+                new List<object> // Variants
+                {
+                    new string[] { // stone { ID : 0 }
+                        "0",
+                        "stone"
+                    },
+                    new string[] { // stone { ID : 1 }
+                        "1",
+                        "granite"
+                    },
+                    new string[] { // stone { ID : 2 }
+                        "2",
+                        "polished_granite",
+                        "polishedgranite"
+                    },
+                    new string[] { // stone { ID : 3 }
+                        "3",
+                        "polished_granite",
+                        "polishedgranite"
+                    },
+                }
+            } // Id 1
+        }; // item Registery
+
+         public ItemRegistery(out List<List<object>> list)
+        {
+            list = registery;
+        }
+    }*/
 
     public class Vector3
     {
