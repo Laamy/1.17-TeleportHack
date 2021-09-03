@@ -6,6 +6,8 @@ namespace XYZ_Teleport_1._17._0
     {
         public static string localPlayer = "base+041457D8,8,20,C8,";
         public static string localPlayer_XPosition = "4D0";
+        public static string localPlayer_Gamemode = "";
+        public static string localPlayer_XVelocity = "";
 
         public static void teleport(AABB advancedAxis) // More advanced axis teleportation
         {

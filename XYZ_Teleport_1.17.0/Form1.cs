@@ -14,6 +14,8 @@ namespace XYZ_Teleport_1._17._0
         public Mem mem;
         public Form1()
         {
+            VersionClass.setVersion(VersionClass.versions[0]); // Load latest version!
+
             InitializeComponent();
             handle = this;
             mem = new Mem();
