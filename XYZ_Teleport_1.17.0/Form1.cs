@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
+using XYZ_Teleport_1._17._0._Keymap;
 using XYZ_Teleport_1._17._0.VersionBase;
 
 namespace XYZ_Teleport_1._17._0
@@ -147,6 +148,9 @@ namespace XYZ_Teleport_1._17._0
 
                 parseControl(con);
             }
+
+            Keymap km = new Keymap();
+            Keymap.keyUp += gameKeyUp;
         }
 
         void parseControl(Control v) // Disable controls if no valid offset assigned to them
@@ -260,6 +264,30 @@ namespace XYZ_Teleport_1._17._0
             {
                 Game.gamemode = 2;
             }
+        }
+
+        List<List<string>> _list = new List<List<string>> { /*
+            new List<string>
+            {
+                "Velocity",
+                "0,0,0",
+                "c"
+            }*/
+        }; // Keybinds
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            List<string> tempList = new List<string>();
+            tempList.Add("Velocity");
+            tempList.Add(keybind_Velocity.Text);
+            tempList.Add(keybind_Keybind.Text);
+
+            _list.Add(tempList);
+        }
+
+        private void gameKeyUp(object sender, KeyEvent e)
+        {
+
         }
     }
 }

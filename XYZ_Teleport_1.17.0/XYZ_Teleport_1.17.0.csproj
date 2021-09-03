@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Handlers.cs" />
+    <Compile Include="_Key\Keymap.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
