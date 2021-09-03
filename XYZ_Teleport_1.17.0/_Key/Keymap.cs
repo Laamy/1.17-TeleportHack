@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace XYZ_Teleport_1._17._0._Keymap
 {
     class Keymap
     {
-        [DllImport("user32.dll")] static extern bool GetAsyncKeyState(char v);
+        [DllImport("user32.dll")] static extern bool GetAsyncKeyState(Keys v);
         [DllImport("user32.dll")] static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
         [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
 
@@ -20,9 +21,7 @@ namespace XYZ_Teleport_1._17._0._Keymap
         }
 
         public static Keymap handle;
-        public static EventHandler<KeyEvent> keyDown;
-        public static EventHandler<KeyEvent> keyHeld;
-        public static EventHandler<KeyEvent> keyUp;
+        public static EventHandler<KeyEvent> keyEvent;
 
         Dictionary<char, uint> dBuff = new Dictionary<char, uint>();
         Dictionary<char, bool> noKey = new Dictionary<char, bool>();
@@ -50,18 +49,18 @@ namespace XYZ_Teleport_1._17._0._Keymap
                         {
                             noKey[c] = true;
                             yesKey[c] = false;
-                            if (GetAsyncKeyState(c))
+                            if (GetAsyncKeyState((Keys)c))
                             {
-                                if (keyHeld != null)
-                                    keyHeld.Invoke(this, new KeyEvent(c));
+                                if (keyEvent != null)
+                                    keyEvent.Invoke(this, new KeyEvent((Keys)c, vKeyCodes.KeyHeld));
                                 noKey[c] = false;
                                 if (dBuff[c] > 0)
                                     continue;
                                 dBuff[c]++;
                                 try
                                 {
-                                    if (keyDown != null)
-                                        keyDown.Invoke(this, new KeyEvent(c));
+                                    if (keyEvent != null)
+                                        keyEvent.Invoke(this, new KeyEvent((Keys)c, vKeyCodes.KeyDown));
                                 }
                                 catch { }
                             }
@@ -71,11 +70,11 @@ namespace XYZ_Teleport_1._17._0._Keymap
                                 if (rBuff[c] > 0)
                                     continue;
                                 rBuff[c]++;
-                                if (keyUp != null)
+                                if (keyEvent != null)
                                 {
                                     try
                                     {
-                                        keyUp.Invoke(this, new KeyEvent(c));
+                                        keyEvent.Invoke(this, new KeyEvent((Keys)c, vKeyCodes.KeyUp));
                                     }
                                     catch { }
                                 }
@@ -93,7 +92,18 @@ namespace XYZ_Teleport_1._17._0._Keymap
     }
     public class KeyEvent : EventArgs // flare's key events
     {
-        public char key;
-        public KeyEvent(char v) => key = v;
+        public Keys key;
+        public vKeyCodes vkey;
+        public KeyEvent(Keys v, vKeyCodes c)
+        {
+            key = v;
+            vkey = c;
+        }
+    }
+    public enum vKeyCodes : int
+    {
+        KeyDown = 0,
+        KeyHeld = 1,
+        KeyUp = 2
     }
 }

@@ -150,7 +150,7 @@ namespace XYZ_Teleport_1._17._0
             }
 
             Keymap km = new Keymap();
-            Keymap.keyUp += gameKeyUp;
+            Keymap.keyEvent += gameKey_Clicked;
         }
 
         void parseControl(Control v) // Disable controls if no valid offset assigned to them
@@ -285,9 +285,40 @@ namespace XYZ_Teleport_1._17._0
             _list.Add(tempList);
         }
 
-        private void gameKeyUp(object sender, KeyEvent e)
+        private void gameKey_Clicked(object sender, KeyEvent e) // Untested code
         {
-
+            if (e.vkey == vKeyCodes.KeyUp) // KeyUp event
+            {
+                foreach (List<string> list in _list)
+                {
+                    if (list[0] == "Velocity") // Velocity keybind
+                    {
+                        if (e.key == (Keys)list[2].ToCharArray()[0])
+                        {
+                            Game.velocity = Base.Vec3(list[1]);
+                        }
+                    }
+                    else if (list[0] == "Teleportation") // Teleportation keybind
+                    {
+                        if (e.key == (Keys)list[2].ToCharArray()[0])
+                        {
+                            Game.teleport(Base.Vec3(list[1]));
+                        }
+                    }
+                    else if (list[0] == "Gamemode") // Gamemode keybind
+                    {
+                        if (e.key == (Keys)list[2].ToCharArray()[0])
+                        {
+                            if (list[1].ToLower() == "s" || list[1].ToLower() == "0" || list[1].ToLower() == "survival")
+                                Game.gamemode = 0;
+                            else if (list[1].ToLower() == "c" || list[1].ToLower() == "1" || list[1].ToLower() == "creative")
+                                Game.gamemode = 1;
+                            else if (list[1].ToLower() == "a" || list[1].ToLower() == "2" || list[1].ToLower() == "adventure")
+                                Game.gamemode = 2;
+                        }
+                    }
+                }
+            }
         }
     }
 }
