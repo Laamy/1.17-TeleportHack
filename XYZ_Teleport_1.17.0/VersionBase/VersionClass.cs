@@ -29,7 +29,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             {
                 "1.17.2",
                 "base+04020228,0,18,B8,",
-                "4D0" ,
+                "4D0",
                 "1E08",
                 "50C"
             }),
@@ -45,18 +45,18 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             {
                 "1.16.221",
                 "base+03CDE520,38,50,140,",
-                "4A0" ,
+                "4A0",
                 "",
                 "4E0"
             })
         };
 
-        public static void setVersion(IVersion version) // Didnt realize I fucked this setVersion function up :cry:
+        public static void setVersion(IVersion version) // Okay fixed ;-;
         {
-            Game.localPlayer = version.sdk[1];
-            Game.localPlayer_XPosition = version.sdk[2];
-            Game.localPlayer_Gamemode = version.sdk[3];
-            Game.localPlayer_XVelocity = version.sdk[4];
+            Game.localPlayer = version.sdk[0];
+            Game.localPlayer_XPosition = version.sdk[1];
+            Game.localPlayer_Gamemode = version.sdk[2];
+            Game.localPlayer_XVelocity = version.sdk[3];
         }
     }
 }

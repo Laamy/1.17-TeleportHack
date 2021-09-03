@@ -141,45 +141,42 @@ namespace XYZ_Teleport_1._17._0
                 VersionListItem.DropDownItems.Add(item);
             }
 
-            /*foreach (Control con in Controls)
+            foreach (Control con in Controls)
             {
-                GroupBox box = con as GroupBox;
+                if (con.Tag == null) return; // Skip base controls that we dont want to disable (Exc, menuStrip1)
 
-                if (con.HasChildren)
-                {
-                    parseControl(con);
-
-                    foreach (Control _con in con.Controls)
-                    {
-                        parseControl(_con);
-                    }
-                }
-            }*/
+                parseControl(con);
+            }
         }
 
-        void parseControl(Control v)
+        void parseControl(Control v) // Disable controls if no valid offset assigned to them
         {
-            if (Game.localPlayer == "")
+            if (Game.localPlayer == "" && v.Tag != null)
             {
                 v.Enabled = false;
                 return;
             }
 
-            if (v.Tag.ToString() == "Requirement[typeof(Teleportation)]" && Game.localPlayer_XPosition == "")
-                {
+            if (v.Tag == null) return;
+
+            if (v.Tag.ToString() == "t" && Game.localPlayer_XPosition == "")
+            {
                 v.Enabled = false;
+                return;
             }
             else v.Enabled = true;
 
-            if (v.Tag.ToString() == "Requirement[typeof(Gamemode)]" && Game.localPlayer_Gamemode == "")
+            if (v.Tag.ToString() == "g" && Game.localPlayer_Gamemode == "")
             {
                 v.Enabled = false;
+                return;
             }
             else v.Enabled = true;
 
-            if (v.Tag.ToString() == "Requirement[typeof(Velocity)]" && Game.localPlayer_XVelocity == "")
+            if (v.Tag.ToString() == "v" && Game.localPlayer_XVelocity == "")
             {
                 v.Enabled = false;
+                return;
             }
             else v.Enabled = true;
         }
@@ -203,20 +200,10 @@ namespace XYZ_Teleport_1._17._0
                 }
             }
 
-            /*foreach (Control con in Controls)
+            foreach (Control con in Controls)
             {
-                GroupBox box = con as GroupBox;
-
-                if (con.HasChildren)
-                {
-                    parseControl(con);
-
-                    foreach (Control _con in con.Controls)
-                    {
-                        parseControl(_con);
-                    }
-                }
-            }*/
+                parseControl(con);
+            }
         }
 
         private void button11_Click_1(object sender, EventArgs e)

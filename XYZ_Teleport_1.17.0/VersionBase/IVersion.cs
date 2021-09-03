@@ -8,13 +8,13 @@ namespace XYZ_Teleport_1._17._0.VersionBase
 {
     class IVersion // version template
     {
-        public IVersion(string[] list)
+        public string name;
+        public string[] sdk;
+
+        public IVersion(string[] list) // fixed
         {
             name = list[0];
-            sdk = new string[] { list[1], list[2] };
+            sdk = list.Skip(1).ToArray();
         }
-
-        public string name = "0.0.0.0";
-        public string[] sdk = { "", "" };
     }
 }

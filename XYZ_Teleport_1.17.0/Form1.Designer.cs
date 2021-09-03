@@ -84,7 +84,7 @@ namespace XYZ_Teleport_1._17._0
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 23);
             this.button1.TabIndex = 3;
-            this.button1.Tag = "Requirement[typeof(Teleportation)]";
+            this.button1.Tag = "t";
             this.button1.Text = "Teleport";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -96,7 +96,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(109, 20);
             this.textBox1.TabIndex = 4;
-            this.textBox1.Tag = "Requirement[typeof(Teleportation)]";
+            this.textBox1.Tag = "t";
             this.textBox1.Text = "0, 0, 0";
             // 
             // groupBox1
@@ -109,6 +109,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox1.Size = new System.Drawing.Size(115, 84);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "t";
             this.groupBox1.Text = "Teleportation";
             // 
             // textBox2
@@ -119,7 +120,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(109, 20);
             this.textBox2.TabIndex = 5;
-            this.textBox2.Tag = "Requirement[typeof(Teleportation)]";
+            this.textBox2.Tag = "t";
             // 
             // timer1
             // 
@@ -138,6 +139,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox2.Size = new System.Drawing.Size(115, 103);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Tag = "t";
             this.groupBox2.Text = "Distance Calculator";
             // 
             // textBox5
@@ -148,7 +150,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(109, 20);
             this.textBox5.TabIndex = 6;
-            this.textBox5.Tag = "Requirement[typeof(Teleportation)]";
+            this.textBox5.Tag = "t";
             // 
             // button2
             // 
@@ -157,7 +159,7 @@ namespace XYZ_Teleport_1._17._0
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 23);
             this.button2.TabIndex = 3;
-            this.button2.Tag = "Requirement[typeof(Teleportation)]";
+            this.button2.Tag = "t";
             this.button2.Text = "Calculate";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -169,7 +171,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(109, 20);
             this.textBox4.TabIndex = 4;
-            this.textBox4.Tag = "Requirement[typeof(Teleportation)]";
+            this.textBox4.Tag = "t";
             this.textBox4.Text = "0, 0, 0";
             // 
             // textBox3
@@ -179,7 +181,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(109, 20);
             this.textBox3.TabIndex = 5;
-            this.textBox3.Tag = "Requirement[typeof(Teleportation)]";
+            this.textBox3.Tag = "t";
             this.textBox3.Text = "0, 0, 0";
             // 
             // groupBox3
@@ -192,6 +194,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox3.Size = new System.Drawing.Size(115, 89);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Tag = "t";
             this.groupBox3.Text = "Recall";
             // 
             // button5
@@ -201,7 +204,7 @@ namespace XYZ_Teleport_1._17._0
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(109, 23);
             this.button5.TabIndex = 7;
-            this.button5.Tag = "Requirement[typeof(Teleportation)]";
+            this.button5.Tag = "t";
             this.button5.Text = "Reverse";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -213,7 +216,7 @@ namespace XYZ_Teleport_1._17._0
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(109, 23);
             this.button4.TabIndex = 6;
-            this.button4.Tag = "Requirement[typeof(Teleportation)]";
+            this.button4.Tag = "t";
             this.button4.Text = "Replay";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -225,7 +228,7 @@ namespace XYZ_Teleport_1._17._0
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 23);
             this.button3.TabIndex = 3;
-            this.button3.Tag = "Requirement[typeof(Teleportation)]";
+            this.button3.Tag = "t";
             this.button3.Text = "Start recording";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -240,6 +243,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox4.Size = new System.Drawing.Size(115, 89);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Tag = "t";
             this.groupBox4.Text = "Hitbox Settings";
             // 
             // button6
@@ -249,7 +253,7 @@ namespace XYZ_Teleport_1._17._0
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(109, 23);
             this.button6.TabIndex = 7;
-            this.button6.Tag = "Requirement[typeof(Teleportation)]";
+            this.button6.Tag = "t";
             this.button6.Text = "Fix Hitbox";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -261,7 +265,7 @@ namespace XYZ_Teleport_1._17._0
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(109, 23);
             this.button7.TabIndex = 6;
-            this.button7.Tag = "Requirement[typeof(Teleportation)]";
+            this.button7.Tag = "t";
             this.button7.Text = "Noclip Mode";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -273,7 +277,7 @@ namespace XYZ_Teleport_1._17._0
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(109, 23);
             this.button8.TabIndex = 3;
-            this.button8.Tag = "Requirement[typeof(Teleportation)]";
+            this.button8.Tag = "t";
             this.button8.Text = "Phase Mode";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -288,6 +292,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox5.Size = new System.Drawing.Size(115, 200);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
+            this.groupBox5.Tag = "t";
             this.groupBox5.Text = "Waypoints";
             // 
             // treeView1
@@ -297,7 +302,7 @@ namespace XYZ_Teleport_1._17._0
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(109, 137);
             this.treeView1.TabIndex = 5;
-            this.treeView1.Tag = "Requirement[typeof(Teleportation)]";
+            this.treeView1.Tag = "t";
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
@@ -308,7 +313,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(109, 20);
             this.textBox6.TabIndex = 4;
-            this.textBox6.Tag = "Requirement[typeof(Teleportation)]";
+            this.textBox6.Tag = "t";
             // 
             // button11
             // 
@@ -317,7 +322,7 @@ namespace XYZ_Teleport_1._17._0
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(109, 23);
             this.button11.TabIndex = 3;
-            this.button11.Tag = "Requirement[typeof(Teleportation)]";
+            this.button11.Tag = "t";
             this.button11.Text = "Save Waypoint";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click_1);
@@ -394,6 +399,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox6.Size = new System.Drawing.Size(115, 84);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
+            this.groupBox6.Tag = "v";
             this.groupBox6.Text = "Velocity";
             // 
             // textBox7
@@ -404,7 +410,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(109, 20);
             this.textBox7.TabIndex = 5;
-            this.textBox7.Tag = "Requirement[typeof(Velocity)]";
+            this.textBox7.Tag = "v";
             // 
             // button9
             // 
@@ -413,7 +419,7 @@ namespace XYZ_Teleport_1._17._0
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(109, 23);
             this.button9.TabIndex = 3;
-            this.button9.Tag = "Requirement[typeof(Velocity)]";
+            this.button9.Tag = "v";
             this.button9.Text = "Set Velocity";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -425,7 +431,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(109, 20);
             this.textBox8.TabIndex = 4;
-            this.textBox8.Tag = "Requirement[typeof(Velocity)]";
+            this.textBox8.Tag = "v";
             this.textBox8.Text = "0, 0, 0";
             // 
             // groupBox7
@@ -437,6 +443,7 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox7.Size = new System.Drawing.Size(115, 61);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
+            this.groupBox7.Tag = "g";
             this.groupBox7.Text = "Gamemode";
             // 
             // button10
@@ -446,7 +453,7 @@ namespace XYZ_Teleport_1._17._0
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(109, 23);
             this.button10.TabIndex = 3;
-            this.button10.Tag = "Requirement[typeof(Gamemode)]";
+            this.button10.Tag = "g";
             this.button10.Text = "Teleport";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -458,7 +465,7 @@ namespace XYZ_Teleport_1._17._0
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(109, 20);
             this.textBox10.TabIndex = 4;
-            this.textBox10.Tag = "Requirement[typeof(Gamemode)]";
+            this.textBox10.Tag = "g";
             this.textBox10.Text = "Survival";
             // 
             // Form1
@@ -478,6 +485,7 @@ namespace XYZ_Teleport_1._17._0
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.ShowIcon = false;
+            this.Tag = "t";
             this.Text = "Laamys teleporting plz stfu :cry:";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
