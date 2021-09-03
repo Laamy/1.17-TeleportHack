@@ -14,6 +14,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "1.",
                 "base+",
                 "" ,
+                "" ,
                 "" 
             }),*/
             new IVersion(new string[] // might add Beta versions later :thinking: nah
@@ -23,7 +24,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "4D0", // PositionX-1 offset
                 "1E08", // Gamemode offset,
                 "50C" // VelocityX offset
-            }),
+            }), // (Note: gamemode works like 1(Creative) * 4294967296, etc
             new IVersion(new string[]
             {
                 "1.17.2",
