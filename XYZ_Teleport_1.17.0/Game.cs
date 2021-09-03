@@ -6,8 +6,8 @@ namespace XYZ_Teleport_1._17._0
     {
         public static string localPlayer = "base+041457D8,8,20,C8,";
         public static string localPlayer_XPosition = "4D0";
-        public static string localPlayer_Gamemode = "";
-        public static string localPlayer_XVelocity = "";
+        public static string localPlayer_Gamemode = "1E08";
+        public static string localPlayer_XVelocity = "50C";
 
         public static void teleport(AABB advancedAxis) // More advanced axis teleportation
         {
@@ -38,6 +38,34 @@ namespace XYZ_Teleport_1._17._0
                 return Base.Vec3(Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XPosition, 0)) + "," +
                     Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XPosition, 4)) + "," +
                     Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XPosition, 8)));
+            }
+        }
+
+        public static int gamemode
+        {
+            get
+            {
+                return (int)(Form1.handle.mem.ReadLong(localPlayer + localPlayer_Gamemode) / 4294967296);
+            }
+            set
+            {
+                Form1.handle.mem.WriteMemory(localPlayer + localPlayer_Gamemode, "long", ((ulong)value * 4294967296).ToString());
+            }
+        }
+
+        public static Vector3 velocity
+        {
+            get
+            {
+                return Base.Vec3(Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 0)) + "," +
+                    Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 4)) + "," +
+                    Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 8)));
+            }
+            set
+            {
+                Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 0), "float", value.x.ToString());
+                Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 4), "float", value.y.ToString());
+                Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 8), "float", value.z.ToString());
             }
         }
     }

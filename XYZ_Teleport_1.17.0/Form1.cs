@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using XYZ_Teleport_1._17._0.VersionBase;
@@ -14,9 +13,10 @@ namespace XYZ_Teleport_1._17._0
         public Mem mem;
         public Form1()
         {
+            InitializeComponent();
+
             VersionClass.setVersion(VersionClass.versions[0]); // Load latest version!
 
-            InitializeComponent();
             handle = this;
             mem = new Mem();
 
@@ -54,7 +54,16 @@ namespace XYZ_Teleport_1._17._0
                 }
                 else
                 {
-                    textBox2.Text = Game.position.ToString();
+                    try
+                    {
+                        textBox2.Text = Game.position.ToString();
+                    }
+                    catch { }
+                    try
+                    {
+                        textBox7.Text = Game.velocity.ToString();
+                    }
+                    catch { }
                 }
             }
         }
@@ -131,6 +140,48 @@ namespace XYZ_Teleport_1._17._0
 
                 VersionListItem.DropDownItems.Add(item);
             }
+
+            /*foreach (Control con in Controls)
+            {
+                GroupBox box = con as GroupBox;
+
+                if (con.HasChildren)
+                {
+                    parseControl(con);
+
+                    foreach (Control _con in con.Controls)
+                    {
+                        parseControl(_con);
+                    }
+                }
+            }*/
+        }
+
+        void parseControl(Control v)
+        {
+            if (Game.localPlayer == "")
+            {
+                v.Enabled = false;
+                return;
+            }
+
+            if (v.Tag.ToString() == "Requirement[typeof(Teleportation)]" && Game.localPlayer_XPosition == "")
+                {
+                v.Enabled = false;
+            }
+            else v.Enabled = true;
+
+            if (v.Tag.ToString() == "Requirement[typeof(Gamemode)]" && Game.localPlayer_Gamemode == "")
+            {
+                v.Enabled = false;
+            }
+            else v.Enabled = true;
+
+            if (v.Tag.ToString() == "Requirement[typeof(Velocity)]" && Game.localPlayer_XVelocity == "")
+            {
+                v.Enabled = false;
+            }
+            else v.Enabled = true;
         }
 
         private void versionSwitched(object sender, EventArgs e)
@@ -151,6 +202,21 @@ namespace XYZ_Teleport_1._17._0
                     tagValue.Text = tagValue.Tag.ToString() + " (Current)";
                 }
             }
+
+            /*foreach (Control con in Controls)
+            {
+                GroupBox box = con as GroupBox;
+
+                if (con.HasChildren)
+                {
+                    parseControl(con);
+
+                    foreach (Control _con in con.Controls)
+                    {
+                        parseControl(_con);
+                    }
+                }
+            }*/
         }
 
         private void button11_Click_1(object sender, EventArgs e)
@@ -186,6 +252,27 @@ namespace XYZ_Teleport_1._17._0
             Process MinecraftProcess = Process.GetProcessesByName("Minecraft.Windows")[0];
             if (MinecraftProcess != null)
                 MinecraftProcess.Kill();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Game.velocity = new Vector3(textBox8.Text);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (textBox10.Text.ToLower() == "survival" || textBox10.Text.ToLower() == "s" || textBox10.Text == "0")
+            {
+                Game.gamemode = 0;
+            }
+            else if (textBox10.Text.ToLower() == "creative" || textBox10.Text.ToLower() == "c" || textBox10.Text == "1")
+            {
+                Game.gamemode = 1;
+            }
+            else if (textBox10.Text.ToLower() == "adventure" || textBox10.Text.ToLower() == "a" || textBox10.Text == "2")
+            {
+                Game.gamemode = 2;
+            }
         }
     }
 }

@@ -60,3 +60,33 @@ namespace XYZ_Teleport_1._17._0.VersionBase
         }
     }
 }
+
+/*
+
+onGround - 1E0
+onGround2 - 1E4
+stepHeight - 240
+worldAge - 2B0
+gamemode - 1E08
+isFlying - 9C0
+blocksTraveled_Ex - 250
+blocksTraveled - 250 + 16
+helditemCount - 228A
+holdingItem - 2274
+holdingItemId - 2280 (I think..?)
+selectedHotbarId - 22F8
+viewCreativeItems - 9D8
+viewCreativeItemsSelectedCategory - 2370
+entityType - 410
+inInventory - 11E0
+username - 920
+gameDim - 370 18
+positionX - 4D0
+hitbox - 4D0 + 28
+velocity - 50C
+swingAn - 7A0
+lookingEntityId - 10B8
+inWater - 265
+bodyRots - 148
+
+ */
