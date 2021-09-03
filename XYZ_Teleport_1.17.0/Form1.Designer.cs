@@ -454,7 +454,7 @@ namespace XYZ_Teleport_1._17._0
             this.button10.Size = new System.Drawing.Size(109, 23);
             this.button10.TabIndex = 3;
             this.button10.Tag = "g";
-            this.button10.Text = "Teleport";
+            this.button10.Text = "Set Gamemode";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
