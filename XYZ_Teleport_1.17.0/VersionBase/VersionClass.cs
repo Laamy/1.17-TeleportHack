@@ -51,12 +51,12 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             })
         };
 
-        public static void setVersion(IVersion version)
+        public static void setVersion(IVersion version) // Didnt realize I fucked this setVersion function up :cry:
         {
-            Game.localPlayer = version.sdk[0];
-            Game.localPlayer_XPosition = version.sdk[1];
-            Game.localPlayer_Gamemode = version.sdk[2];
-            Game.localPlayer_XVelocity = version.sdk[3];
+            Game.localPlayer = version.sdk[1];
+            Game.localPlayer_XPosition = version.sdk[2];
+            Game.localPlayer_Gamemode = version.sdk[3];
+            Game.localPlayer_XVelocity = version.sdk[4];
         }
     }
 }
