@@ -27,7 +27,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             }), // (Note: gamemode works like 1(Creative) * 4294967296, etc
             new IVersion(new string[]
             {
-                "1.17.2",
+                "1.17.10",
                 "base+04020228,0,18,B8,",
                 "4D0",
                 "1E08",
@@ -35,7 +35,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             }),
             new IVersion(new string[]
             {
-                "1.17",
+                "1.17.2",
                 "base+03FFFA98,0,50,138,",
                 "4D0",
                 "1E08",
