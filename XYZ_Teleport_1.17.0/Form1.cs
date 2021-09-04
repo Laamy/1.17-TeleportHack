@@ -283,7 +283,7 @@ namespace XYZ_Teleport_1._17._0
             List<string> tempList = new List<string>();
             tempList.Add("Velocity");
             tempList.Add(keybind_Velocity.Text);
-            tempList.Add(keybind_Keybind.Text);
+            tempList.Add(keybind_Keybind.Text.ToUpper());
 
             _list.Add(tempList);
         }
@@ -297,9 +297,11 @@ namespace XYZ_Teleport_1._17._0
             }*/
             if (e.vkey == vKeyCodes.KeyUp) // KeyUp event
             {
+                //if (_list == null || _list.Count == 0) return;
+
                 foreach (List<string> list in _list)
                 {
-                    Text = list[0];
+                    //MessageBox.Show(list[0]);
                     if (list[0] == "Velocity") // Velocity keybind
                     {
                         // ++Keymap.e;
@@ -308,7 +310,7 @@ namespace XYZ_Teleport_1._17._0
                             Game.velocity = Base.Vec3(list[1]);
                         }
                     }
-                    else if (list[0] == "Teleportation") // Teleportation keybind
+                    /*else if (list[0] == "Teleportation") // Teleportation keybind
                     {
                         if (e.key == (Keys)list[2].ToCharArray()[0])
                         {
@@ -331,7 +333,7 @@ namespace XYZ_Teleport_1._17._0
                                 ++i;
                             }
                         }
-                    }
+                    }*/
                 }
             }
         }
