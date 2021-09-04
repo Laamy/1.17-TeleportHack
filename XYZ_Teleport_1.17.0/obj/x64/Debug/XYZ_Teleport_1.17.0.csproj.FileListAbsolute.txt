@@ -8,3 +8,4 @@ C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debu
 C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.csproj.CoreCompileInputs.cache
 C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.exe
 C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.pdb
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1._17._0.LuaBase.LuaEditor.resources

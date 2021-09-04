@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using XYZ_Teleport_1._17._0._Keymap;
+using XYZ_Teleport_1._17._0.LuaBase;
 using XYZ_Teleport_1._17._0.VersionBase;
 
 namespace XYZ_Teleport_1._17._0
@@ -132,6 +133,9 @@ namespace XYZ_Teleport_1._17._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LuaEditor t = new LuaEditor();
+            t.Show();
+
             foreach (IVersion version in VersionClass.versions)
             {
                 ToolStripMenuItem item = new ToolStripMenuItem(version.name);
