@@ -310,7 +310,7 @@ namespace XYZ_Teleport_1._17._0
                             Game.velocity = Base.Vec3(list[1]);
                         }
                     }
-                    /*else if (list[0] == "Teleportation") // Teleportation keybind
+                    else if (list[0] == "Teleportation") // Teleportation keybind
                     {
                         if (e.key == (Keys)list[2].ToCharArray()[0])
                         {
@@ -333,9 +333,29 @@ namespace XYZ_Teleport_1._17._0
                                 ++i;
                             }
                         }
-                    }*/
+                    }
                 }
             }
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            List<string> tempList = new List<string>();
+            tempList.Add("Teleportation");
+            tempList.Add(toolStripTextBox1.Text);
+            tempList.Add(toolStripTextBox2.Text.ToUpper());
+
+            _list.Add(tempList);
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            List<string> tempList = new List<string>();
+            tempList.Add("Gamemode");
+            tempList.Add(toolStripTextBox3.Text.ToLower());
+            tempList.Add(toolStripTextBox4.Text.ToUpper());
+
+            _list.Add(tempList);
         }
     }
 }

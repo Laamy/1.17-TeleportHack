@@ -60,19 +60,26 @@ namespace XYZ_Teleport_1._17._0
             this.crashGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minecraftVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VersionListItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keybindsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.velocityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.keybind_Velocity = new System.Windows.Forms.ToolStripTextBox();
+            this.keybind_Keybind = new System.Windows.Forms.ToolStripTextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.keybindsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.velocityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.keybind_Velocity = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.keybind_Keybind = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button10 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -359,26 +366,26 @@ namespace XYZ_Teleport_1._17._0
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
             // 
             // killGameToolStripMenuItem
             // 
             this.killGameToolStripMenuItem.Name = "killGameToolStripMenuItem";
-            this.killGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.killGameToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.killGameToolStripMenuItem.Text = "Kill Game";
             this.killGameToolStripMenuItem.Click += new System.EventHandler(this.killGameToolStripMenuItem_Click);
             // 
             // crashGameToolStripMenuItem
             // 
             this.crashGameToolStripMenuItem.Name = "crashGameToolStripMenuItem";
-            this.crashGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crashGameToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.crashGameToolStripMenuItem.Text = "Crash Game";
             this.crashGameToolStripMenuItem.Click += new System.EventHandler(this.crashGameToolStripMenuItem_Click);
             // 
@@ -393,8 +400,49 @@ namespace XYZ_Teleport_1._17._0
             // VersionListItem
             // 
             this.VersionListItem.Name = "VersionListItem";
-            this.VersionListItem.Size = new System.Drawing.Size(180, 22);
+            this.VersionListItem.Size = new System.Drawing.Size(112, 22);
             this.VersionListItem.Text = "Version";
+            // 
+            // keybindsToolStripMenuItem
+            // 
+            this.keybindsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.velocityToolStripMenuItem,
+            this.toolStripMenuItem4});
+            this.keybindsToolStripMenuItem.Name = "keybindsToolStripMenuItem";
+            this.keybindsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.keybindsToolStripMenuItem.Text = "Keybinds";
+            // 
+            // velocityToolStripMenuItem
+            // 
+            this.velocityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.keybind_Velocity,
+            this.keybind_Keybind});
+            this.velocityToolStripMenuItem.Name = "velocityToolStripMenuItem";
+            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.velocityToolStripMenuItem.Text = "Velocity";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Create Keybind";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // keybind_Velocity
+            // 
+            this.keybind_Velocity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.keybind_Velocity.Name = "keybind_Velocity";
+            this.keybind_Velocity.Size = new System.Drawing.Size(100, 23);
+            this.keybind_Velocity.Text = "0,0,0";
+            // 
+            // keybind_Keybind
+            // 
+            this.keybind_Keybind.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.keybind_Keybind.Name = "keybind_Keybind";
+            this.keybind_Keybind.Size = new System.Drawing.Size(100, 23);
+            this.keybind_Keybind.Text = "c";
             // 
             // groupBox6
             // 
@@ -453,61 +501,6 @@ namespace XYZ_Teleport_1._17._0
             this.groupBox7.Tag = "g";
             this.groupBox7.Text = "Gamemode";
             // 
-            // textBox10
-            // 
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox10.Location = new System.Drawing.Point(3, 16);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(109, 20);
-            this.textBox10.TabIndex = 4;
-            this.textBox10.Tag = "g";
-            this.textBox10.Text = "Survival";
-            // 
-            // keybindsToolStripMenuItem
-            // 
-            this.keybindsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.velocityToolStripMenuItem});
-            this.keybindsToolStripMenuItem.Name = "keybindsToolStripMenuItem";
-            this.keybindsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.keybindsToolStripMenuItem.Text = "Keybinds";
-            // 
-            // velocityToolStripMenuItem
-            // 
-            this.velocityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.keybind_Velocity,
-            this.keybind_Keybind,
-            this.toolStripSeparator2});
-            this.velocityToolStripMenuItem.Name = "velocityToolStripMenuItem";
-            this.velocityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.velocityToolStripMenuItem.Text = "Velocity";
-            // 
-            // keybind_Velocity
-            // 
-            this.keybind_Velocity.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.keybind_Velocity.Name = "keybind_Velocity";
-            this.keybind_Velocity.Size = new System.Drawing.Size(100, 23);
-            this.keybind_Velocity.Text = "0,0,0";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
-            // 
-            // keybind_Keybind
-            // 
-            this.keybind_Keybind.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.keybind_Keybind.Name = "keybind_Keybind";
-            this.keybind_Keybind.Size = new System.Drawing.Size(100, 23);
-            this.keybind_Keybind.Text = "c";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "Create Keybind";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
             // button10
             // 
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
@@ -519,6 +512,78 @@ namespace XYZ_Teleport_1._17._0
             this.button10.Text = "Set Gamemode";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // textBox10
+            // 
+            this.textBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox10.Location = new System.Drawing.Point(3, 16);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(109, 20);
+            this.textBox10.TabIndex = 4;
+            this.textBox10.Tag = "g";
+            this.textBox10.Text = "Survival";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripTextBox1,
+            this.toolStripTextBox2});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Teleportation";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "Create Keybind";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "0,0,0";
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox2.Text = "c";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
+            this.toolStripTextBox3,
+            this.toolStripTextBox4});
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Text = "Gamemode";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "Create Keybind";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox3.Text = "Survival";
+            // 
+            // toolStripTextBox4
+            // 
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox4.Text = "c";
             // 
             // Form1
             // 
@@ -600,9 +665,16 @@ namespace XYZ_Teleport_1._17._0
         private System.Windows.Forms.ToolStripMenuItem velocityToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox keybind_Velocity;
         private System.Windows.Forms.ToolStripTextBox keybind_Keybind;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
     }
 }
 
