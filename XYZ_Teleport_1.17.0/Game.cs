@@ -100,6 +100,7 @@ namespace XYZ_Teleport_1._17._0
         }
     }
 
+    // Might just parse this url tbh : minecraft-ids.grahamedgecombe.com/
     /*public class ItemRegistery // Not used nor will be just thinking of an example :thinking:
     {
         private List<List<object>> registery = new List<List<object>> {

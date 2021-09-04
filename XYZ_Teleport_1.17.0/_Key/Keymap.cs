@@ -9,10 +9,11 @@ namespace XYZ_Teleport_1._17._0._Keymap
 {
     class Keymap
     {
-        [DllImport("user32.dll")] static extern bool GetAsyncKeyState(Keys v);
+        [DllImport("user32.dll")] static extern bool GetAsyncKeyState(char v);
         [DllImport("user32.dll")] static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
         [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
 
+        public static int e = 0;
         public static bool isMinecraftFocused()
         {
             StringBuilder sb = new StringBuilder("Minecraft".Length + 1);
@@ -31,62 +32,75 @@ namespace XYZ_Teleport_1._17._0._Keymap
 
         public Keymap()
         {
+            // ++e;
             handle = this;
+            // ++e;
+            for (char c = (char)0; c < 0xFF; c++)
+            {
+                rBuff.Add(c, 0);
+                noKey.Add(c, true);
+            }
+            // ++e;
             for (char c = (char)0; c < 0xFF; c++)
             {
                 dBuff.Add(c, 0);
-                rBuff.Add(c, 0);
-                noKey.Add(c, true);
                 yesKey.Add(c, true);
             }
+            // ++e;
 
             new Thread(() => {
-                try
+                while (true)
                 {
-                    if (isMinecraftFocused())
+                    // ++e;
+                    try
                     {
-                        for (char c = (char)0; c < 0xFF; c++)
+                        if (isMinecraftFocused())
                         {
-                            noKey[c] = true;
-                            yesKey[c] = false;
-                            if (GetAsyncKeyState((Keys)c))
+                            // ++e;
+                            for (char c = (char)0; c < 0xFF; c++)
                             {
-                                if (keyEvent != null)
-                                    keyEvent.Invoke(this, new KeyEvent((Keys)c, vKeyCodes.KeyHeld));
-                                noKey[c] = false;
-                                if (dBuff[c] > 0)
-                                    continue;
-                                dBuff[c]++;
-                                try
+                                noKey[c] = true;
+                                yesKey[c] = false;
+                                if (GetAsyncKeyState(c))
                                 {
                                     if (keyEvent != null)
-                                        keyEvent.Invoke(this, new KeyEvent((Keys)c, vKeyCodes.KeyDown));
-                                }
-                                catch { }
-                            }
-                            else
-                            {
-                                yesKey[c] = true;
-                                if (rBuff[c] > 0)
-                                    continue;
-                                rBuff[c]++;
-                                if (keyEvent != null)
-                                {
+                                            keyEvent.Invoke(this, new KeyEvent(c, vKeyCodes.KeyHeld));
+                                    // ++e;
+                                    noKey[c] = false;
+                                    if (dBuff[c] > 0)
+                                        continue;
+                                    dBuff[c]++;
                                     try
                                     {
-                                        keyEvent.Invoke(this, new KeyEvent((Keys)c, vKeyCodes.KeyUp));
+                                        if (keyEvent != null)
+                                            keyEvent.Invoke(this, new KeyEvent(c, vKeyCodes.KeyDown));
+                                        // ++e;
                                     }
                                     catch { }
                                 }
+                                else
+                                {
+                                    yesKey[c] = true;
+                                    if (rBuff[c] > 0)
+                                        continue;
+                                    rBuff[c]++;
+                                    try
+                                    {
+                                        if (keyEvent != null)
+                                            keyEvent.Invoke(this, new KeyEvent(c, vKeyCodes.KeyUp));
+                                        // ++e;
+                                    }
+                                    catch { }
+                                }
+                                if (noKey[c])
+                                    dBuff[c] = 0;
+                                if (!yesKey[c])
+                                    rBuff[c] = 0;
                             }
-                            if (noKey[c])
-                                dBuff[c] = 0;
-                            if (!yesKey[c])
-                                rBuff[c] = 0;
                         }
                     }
+                    catch { }
                 }
-                catch { }
             }).Start();
         }
     }
@@ -94,6 +108,11 @@ namespace XYZ_Teleport_1._17._0._Keymap
     {
         public Keys key;
         public vKeyCodes vkey;
+        public KeyEvent(char v, vKeyCodes c)
+        {
+            key = (Keys)v;
+            vkey = c;
+        }
         public KeyEvent(Keys v, vKeyCodes c)
         {
             key = v;

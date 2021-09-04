@@ -18,6 +18,10 @@ namespace XYZ_Teleport_1._17._0
 
             VersionClass.setVersion(VersionClass.versions[0]); // Load latest version!
 
+            new Keymap(); // Start key handle
+
+            Keymap.keyEvent += gameKey_Clicked;
+
             handle = this;
             mem = new Mem();
 
@@ -43,6 +47,7 @@ namespace XYZ_Teleport_1._17._0
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // Text = Keymap.e.ToString();
             if (mem != null) // check if mc is open then attach if its not already
             {
                 if (mem.theProc == null || mem.theProc.HasExited)
@@ -148,9 +153,6 @@ namespace XYZ_Teleport_1._17._0
 
                 parseControl(con);
             }
-
-            Keymap km = new Keymap();
-            Keymap.keyEvent += gameKey_Clicked;
         }
 
         void parseControl(Control v) // Disable controls if no valid offset assigned to them
@@ -266,7 +268,8 @@ namespace XYZ_Teleport_1._17._0
             }
         }
 
-        List<List<string>> _list = new List<List<string>> { /*
+        List<List<string>> _list = new List<List<string>>
+        { /*
             new List<string>
             {
                 "Velocity",
@@ -287,12 +290,19 @@ namespace XYZ_Teleport_1._17._0
 
         private void gameKey_Clicked(object sender, KeyEvent e) // Untested code
         {
+            /*if (e.vkey == vKeyCodes.KeyUp) // KeyUp event
+            {
+                if (e.key == Keys.C)
+                    MessageBox.Show("Worked!");
+            }*/
             if (e.vkey == vKeyCodes.KeyUp) // KeyUp event
             {
                 foreach (List<string> list in _list)
                 {
+                    Text = list[0];
                     if (list[0] == "Velocity") // Velocity keybind
                     {
+                        // ++Keymap.e;
                         if (e.key == (Keys)list[2].ToCharArray()[0])
                         {
                             Game.velocity = Base.Vec3(list[1]);
