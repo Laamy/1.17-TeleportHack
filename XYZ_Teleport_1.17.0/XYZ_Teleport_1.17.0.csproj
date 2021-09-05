@@ -115,6 +115,7 @@
     </Compile>
     <Compile Include="LuaBase\MLuaBase\LocalPlayer.cs" />
     <Compile Include="LuaBase\MLuaBase\MLua.cs" />
+    <Compile Include="LuaBase\MLuaBase\RigidBody.cs" />
     <Compile Include="_Key\Keymap.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />

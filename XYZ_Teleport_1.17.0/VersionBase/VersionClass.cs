@@ -15,6 +15,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "base+",
                 "" ,
                 "" ,
+                "" ,
                 "" 
             }),*/
             new IVersion(new string[] // might add Beta versions later :thinking: nah
@@ -23,7 +24,8 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "base+041457D8,8,20,C8,", // LocalPlayer
                 "4D0", // PositionX-1 offset
                 "1E08", // Gamemode offset,
-                "50C" // VelocityX offset
+                "50C", // VelocityX offset
+                "148" // RoationX offset
             }), // (Note: gamemode works like 1(Creative) * 4294967296, etc
             new IVersion(new string[]
             {
@@ -31,7 +33,8 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "base+04020228,0,18,B8,",
                 "4D0",
                 "1E08",
-                "50C"
+                "50C",
+                "148"
             }),
             new IVersion(new string[]
             {
@@ -39,7 +42,8 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "base+03FFFA98,0,50,138,",
                 "4D0",
                 "1E08",
-                "50C"
+                "50C",
+                "148"
             }),
             new IVersion(new string[] // Leave a slot blank if you dont have the offset/dont know how to get it (I dont want to downgrade just to find the gamemode offset :p
             {
@@ -47,7 +51,8 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "base+03CDE520,38,50,140,",
                 "4A0",
                 "",
-                "4E0"
+                "4E0",
+                "124" // Camera rotations
             })
         };
 

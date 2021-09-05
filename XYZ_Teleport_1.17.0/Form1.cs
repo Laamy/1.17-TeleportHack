@@ -27,6 +27,7 @@ namespace XYZ_Teleport_1._17._0
             new Keymap(); // Start key handle
 
             Keymap.keyEvent += gameKey_Clicked;
+            Keymap.keyEvent += luaKeyEvents;
 
             handle = this;
             mem = new Mem();
@@ -368,30 +369,14 @@ namespace XYZ_Teleport_1._17._0
         }
 
         public static List<Lua> luaEnvs = new List<Lua>(); // unsure if this is fully embedded ;-; might be broken due to NLua being shitty
-
-        public void print(string v, params object[] c)
+        public static List<List<object>> luaEvents = new List<List<object>>
         {
-            try
+            /*new List<object>
             {
-                if (c == null)
-                    Console.WriteLine(v);
-                else
-                    Console.WriteLine(v, c);
-            }
-            catch { }
-        }
-
-        public void messagebox(params string[] c)
-        {
-            try
-            {
-                if (c[1] == null)
-                    MessageBox.Show(c[0]);
-                else
-                    MessageBox.Show(c[0], c[1]);
-            }
-            catch { }
-        }
+                // EventKind
+                // LuaFunction
+            }*/
+        };
 
         public static void executeLua(string v)
         {
@@ -399,12 +384,30 @@ namespace XYZ_Teleport_1._17._0
 
             newEnv["mlua"] = new MLua(VersionClass.currentVersion);
 
-            newEnv.RegisterFunction("print", null, typeof(Form1).GetMethod("print"));
-            newEnv.RegisterFunction("messagebox", null, typeof(Form1).GetMethod("messagebox"));
-
             newEnv.DoString(v);
 
+            luaEvents.Add(new List<object>
+            {
+                "KeyPress",
+                newEnv.GetFunction("on_KeyPress") // I have a new idea for these events
+            });
+
             luaEnvs.Add(newEnv); // List the envs so we can call event functions
+        }
+
+        private void luaKeyEvents(object sender, KeyEvent e)
+        {
+            if (e.vkey == vKeyCodes.KeyDown)
+            {
+                foreach (var v in luaEvents)
+                {
+                    if (v[0].ToString() == "KeyPress")
+                    {
+                        LuaFunction func = (LuaFunction)v[1];
+                        func.Call(e.vkey, e.key);
+                    }
+                }
+            }
         }
 
         private void loadLuaToolStripMenuItem_Click(object sender, EventArgs e)
