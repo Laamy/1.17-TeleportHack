@@ -51,6 +51,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -147,7 +148,8 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStripSeparator2,
             this.toolStripDropDownButton1,
             this.toolStripSeparator3,
-            this.toolStripLabel3});
+            this.toolStripLabel3,
+            this.toolStripLabel4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 294);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -217,6 +219,14 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(48, 22);
+            this.toolStripLabel4.Text = "Execute";
+            this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
+            // 
             // LuaEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,5 +269,6 @@ namespace XYZ_Teleport_1._17._0.LuaBase
         private System.Windows.Forms.ToolStripMenuItem luaSyntaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox TabSizeBox;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }

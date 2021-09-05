@@ -1,12 +1,15 @@
 ﻿// using KeraLua;
+using NLua;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using XYZ_Teleport_1._17._0._Keymap;
 using XYZ_Teleport_1._17._0.LuaBase;
+using XYZ_Teleport_1._17._0.LuaBase.MLuaBase;
 using XYZ_Teleport_1._17._0.VersionBase;
 
 namespace XYZ_Teleport_1._17._0
@@ -364,7 +367,45 @@ namespace XYZ_Teleport_1._17._0
             _list.Add(tempList);
         }
 
-        //List<Lua> luaEnvs = new List<Lua>(); // unsure if this is fully embedded ;-; might be broken due to NLua being uninstalled/shitty
+        public static List<Lua> luaEnvs = new List<Lua>(); // unsure if this is fully embedded ;-; might be broken due to NLua being shitty
+
+        public void print(string v, params object[] c)
+        {
+            try
+            {
+                if (c == null)
+                    Console.WriteLine(v);
+                else
+                    Console.WriteLine(v, c);
+            }
+            catch { }
+        }
+
+        public void messagebox(params string[] c)
+        {
+            try
+            {
+                if (c[1] == null)
+                    MessageBox.Show(c[0]);
+                else
+                    MessageBox.Show(c[0], c[1]);
+            }
+            catch { }
+        }
+
+        public static void executeLua(string v)
+        {
+            Lua newEnv = new Lua();
+
+            newEnv["mlua"] = new MLua(VersionClass.currentVersion);
+
+            newEnv.RegisterFunction("print", null, typeof(Form1).GetMethod("print"));
+            newEnv.RegisterFunction("messagebox", null, typeof(Form1).GetMethod("messagebox"));
+
+            newEnv.DoString(v);
+
+            luaEnvs.Add(newEnv); // List the envs so we can call event functions
+        }
 
         private void loadLuaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -376,12 +417,7 @@ namespace XYZ_Teleport_1._17._0
             {
                 if (File.Exists(dlg.FileName))
                 {
-                    //Lua newEnv = new Lua();
-                    //newEnv.LoadFile(dlg.FileName, "");
-
-                    //newEnv.func
-
-                    //luaEnvs.Add(newEnv); // List the envs so we can call event functions
+                    executeLua(File.ReadAllText(dlg.FileName));
                 }
             }
         }

@@ -190,5 +190,10 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             if (Program.quit)
                 Application.Exit();
         }
+
+        private void toolStripLabel4_Click(object sender, EventArgs e)
+        {
+            Form1.executeLua(luaTextbox.Text);
+        }
     }
 }

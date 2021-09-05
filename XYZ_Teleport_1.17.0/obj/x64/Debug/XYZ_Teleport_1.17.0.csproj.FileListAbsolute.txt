@@ -9,3 +9,21 @@ C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debu
 C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.exe
 C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.pdb
 C:\Users\Quinn\Desktop\1.17-TeleportHack-master\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1._17._0.LuaBase.LuaEditor.resources
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\lua54.dll
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\liblua54.dylib
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\liblua54.so
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\XYZ_Teleport_1.17.0.exe.config
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\XYZ_Teleport_1.17.0.exe
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\XYZ_Teleport_1.17.0.pdb
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\KeraLua.dll
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\NLua.dll
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\bin\x64\Debug\KeraLua.xml
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.csproj.AssemblyReference.cache
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1._17._0.Form1.resources
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1._17._0.LuaBase.LuaEditor.resources
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1._17._0.Properties.Resources.resources
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.csproj.GenerateResource.cache
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.csproj.CoreCompileInputs.cache
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.csproj.CopyComplete
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.exe
+C:\Users\Quinn\Desktop\1.17-TeleportHack-master - Copy\XYZ_Teleport_1.17.0\obj\x64\Debug\XYZ_Teleport_1.17.0.pdb

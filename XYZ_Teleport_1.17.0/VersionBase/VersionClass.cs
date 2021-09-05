@@ -51,12 +51,16 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             })
         };
 
+        public static IVersion currentVersion;
+
         public static void setVersion(IVersion version) // Okay fixed ;-;
         {
             Game.localPlayer = version.sdk[0];
             Game.localPlayer_XPosition = version.sdk[1];
             Game.localPlayer_Gamemode = version.sdk[2];
             Game.localPlayer_XVelocity = version.sdk[3];
+
+            currentVersion = version;
         }
     }
 }
