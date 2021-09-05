@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using XYZ_Teleport_1._17._0._Keymap;
@@ -360,6 +361,30 @@ namespace XYZ_Teleport_1._17._0
             tempList.Add(toolStripTextBox4.Text.ToUpper());
 
             _list.Add(tempList);
+        }
+
+        List<string> luaEnvs = new List<string>();
+
+        private void loadLuaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Title = "Open Text File";
+            dlg.Filter = "MCLua files (*.mclua)|*.mclua|All files (*.*)|*.*";
+            dlg.InitialDirectory = @"C:\";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(dlg.FileName))
+                {
+                    string lua = File.ReadAllText(dlg.FileName);
+
+
+                }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.quit = true;
         }
     }
 }

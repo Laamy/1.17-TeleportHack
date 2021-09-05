@@ -29,26 +29,28 @@ namespace XYZ_Teleport_1._17._0.LuaBase
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LuaEditor));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.hiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FontSize = new System.Windows.Forms.ToolStripTextBox();
             this.luaSyntaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TabSizeBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,21 +79,64 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(100, 6);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // hiToolStripMenuItem
+            // 
+            this.hiToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.hiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontToolStripMenuItem,
+            this.luaSyntaxToolStripMenuItem});
+            this.hiToolStripMenuItem.Name = "hiToolStripMenuItem";
+            this.hiToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.hiToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.hiToolStripMenuItem.Text = "Properties";
+            // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FontSize});
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.fontToolStripMenuItem.Text = "Font";
+            // 
+            // FontSize
+            // 
+            this.FontSize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.FontSize.Name = "FontSize";
+            this.FontSize.Size = new System.Drawing.Size(100, 23);
+            this.FontSize.Text = "16";
+            this.FontSize.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
+            // luaSyntaxToolStripMenuItem
+            // 
+            this.luaSyntaxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TabSizeBox});
+            this.luaSyntaxToolStripMenuItem.Name = "luaSyntaxToolStripMenuItem";
+            this.luaSyntaxToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.luaSyntaxToolStripMenuItem.Text = "LuaSyntax";
+            // 
+            // TabSizeBox
+            // 
+            this.TabSizeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TabSizeBox.Name = "TabSizeBox";
+            this.TabSizeBox.Size = new System.Drawing.Size(100, 23);
+            this.TabSizeBox.Text = "12";
+            this.TabSizeBox.TextChanged += new System.EventHandler(this.TabSizeBox_TextChanged);
             // 
             // toolStrip1
             // 
@@ -141,19 +186,19 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             // 
-            // saveToolStripMenuItem1
-            // 
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
-            // 
             // loadToolStripMenuItem1
             // 
             this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem1.Text = "Load";
             this.loadToolStripMenuItem1.Click += new System.EventHandler(this.loadToolStripMenuItem1_Click);
+            // 
+            // saveToolStripMenuItem1
+            // 
+            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
@@ -167,48 +212,10 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStripLabel3.Text = "(O(";
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
-            // hiToolStripMenuItem
+            // timer1
             // 
-            this.hiToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.hiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fontToolStripMenuItem,
-            this.luaSyntaxToolStripMenuItem});
-            this.hiToolStripMenuItem.Name = "hiToolStripMenuItem";
-            this.hiToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.hiToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.hiToolStripMenuItem.Text = "Properties";
-            // 
-            // fontToolStripMenuItem
-            // 
-            this.fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FontSize});
-            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fontToolStripMenuItem.Text = "Font";
-            // 
-            // FontSize
-            // 
-            this.FontSize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FontSize.Name = "FontSize";
-            this.FontSize.Size = new System.Drawing.Size(100, 23);
-            this.FontSize.Text = "16";
-            this.FontSize.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
-            // 
-            // luaSyntaxToolStripMenuItem
-            // 
-            this.luaSyntaxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TabSizeBox});
-            this.luaSyntaxToolStripMenuItem.Name = "luaSyntaxToolStripMenuItem";
-            this.luaSyntaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.luaSyntaxToolStripMenuItem.Text = "LuaSyntax";
-            // 
-            // TabSizeBox
-            // 
-            this.TabSizeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TabSizeBox.Name = "TabSizeBox";
-            this.TabSizeBox.Size = new System.Drawing.Size(100, 23);
-            this.TabSizeBox.Text = "12";
-            this.TabSizeBox.TextChanged += new System.EventHandler(this.TabSizeBox_TextChanged);
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // LuaEditor
             // 
@@ -251,5 +258,6 @@ namespace XYZ_Teleport_1._17._0.LuaBase
         private System.Windows.Forms.ToolStripTextBox FontSize;
         private System.Windows.Forms.ToolStripMenuItem luaSyntaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox TabSizeBox;
+        private System.Windows.Forms.Timer timer1;
     }
 }

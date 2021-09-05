@@ -28,20 +28,34 @@ namespace XYZ_Teleport_1._17._0.LuaBase
                 "then",
                 "else",
                 "elseif",
+                "do",
                 "end",
+                "while",
                 "true",
+                "repeat",
+                "break",
+                "for",
+                "until",
                 "false",
                 "local",
-                "return"
+                "return",
+                "nil"
             });
-            luaTextbox.Settings.Keyvoid.AddRange(new string[]{ // Add lua statements
-                "print"
+            luaTextbox.Settings.Keyvoid.AddRange(new string[]{
+                "print",
+                //"mlua:exit()",
+                //"mlua:Base()", // local vec3 = mlua:Base().Vec3(0,0,0) ; create a vector3 in lua
+                "mlua:getLocalPlayer()",
+            });
+            luaTextbox.Settings.Keyc.AddRange(new string[]{
+                "mlua"
             });
 
             luaTextbox.Settings.Comment = "--";
 
             luaTextbox.Settings.KeywordColor = Color.Blue;
-            luaTextbox.Settings.KeyvoidColor = Color.DeepPink;
+            luaTextbox.Settings.KeyvoidColor = Color.LightSkyBlue;
+            luaTextbox.Settings.KeycColor = Color.BlueViolet;
             luaTextbox.Settings.CommentColor = Color.Green;
             luaTextbox.Settings.StringColor = Color.IndianRed;
             luaTextbox.Settings.IntegerColor = Color.Red;
@@ -49,8 +63,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             luaTextbox.Settings.EnableStrings = true;
             luaTextbox.Settings.EnableIntegers = true;
 
-            luaTextbox.CompileKeywords();
-            luaTextbox.CompileKeyvoid();
+            luaTextbox.Compile();
 
             luaTextbox.TextChanged += ValidateLuaFormat;
             luaTextbox.KeyDown += CustomKeys;
@@ -170,6 +183,12 @@ namespace XYZ_Teleport_1._17._0.LuaBase
                 luaTextbox.ProcessAllLines();
             }
             catch { }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Program.quit)
+                Application.Exit();
         }
     }
 }

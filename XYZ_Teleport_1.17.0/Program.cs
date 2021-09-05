@@ -5,6 +5,8 @@ namespace XYZ_Teleport_1._17._0
 {
     static class Program
     {
+        public static bool quit = false;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

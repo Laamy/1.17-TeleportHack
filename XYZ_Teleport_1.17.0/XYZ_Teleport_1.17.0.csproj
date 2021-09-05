@@ -29,6 +29,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -105,6 +107,8 @@
     <Compile Include="LuaBase\LuaSyntax.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="LuaBase\MLuaBase\LocalPlayer.cs" />
+    <Compile Include="LuaBase\MLuaBase\MLua.cs" />
     <Compile Include="_Key\Keymap.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />

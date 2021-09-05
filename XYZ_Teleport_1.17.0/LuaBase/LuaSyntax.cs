@@ -16,6 +16,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 		private int m_nLineEnd = 0;
 		private string m_strKeywords = "";
 		private string m_strkeyvoid = "";
+		private string m_strkeyc = "";
 		private int m_nCurSelection = 0;
 
 		/// <summary>
@@ -88,6 +89,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 			// Process the keywords
 			ProcessRegex(m_strKeywords, Settings.KeywordColor);
 			ProcessRegex(m_strkeyvoid, Settings.KeyvoidColor);
+			ProcessRegex(m_strkeyc, Settings.KeycColor);
 			// Process numbers
 			if (Settings.EnableIntegers)
 				ProcessRegex("\\b(?:[0-9]*\\.)?[0-9]+\\b", Settings.IntegerColor);
@@ -119,10 +121,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 				SelectionColor = color;
 			}
 		}
-		/// <summary>
-		/// Compiles the keywords as a regular expression.
-		/// </summary>
-		public void CompileKeywords()
+		public void Compile()
 		{
 			for (int i = 0; i < Settings.Keywords.Count; i++)
 			{
@@ -133,9 +132,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 				else
 					m_strKeywords += "\\b" + strKeyword + "\\b|";
 			}
-		}
-		public void CompileKeyvoid()
-		{
+
 			for (int i = 0; i < Settings.Keyvoid.Count; i++)
 			{
 				string strKeyword = Settings.Keyvoid[i];
@@ -144,6 +141,16 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 					m_strkeyvoid += "\\b" + strKeyword + "\\b";
 				else
 					m_strkeyvoid += "\\b" + strKeyword + "\\b|";
+			}
+
+			for (int i = 0; i < Settings.Keyc.Count; i++)
+			{
+				string strKeyword = Settings.Keyc[i];
+
+				if (i == Settings.Keyc.Count - 1)
+					m_strkeyc += "\\b" + strKeyword + "\\b";
+				else
+					m_strkeyc += "\\b" + strKeyword + "\\b|";
 			}
 		}
 
@@ -177,8 +184,12 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 	{
 		public List<string> keywordList = new List<string>();
 		public Color keywordColor = new Color();
+
 		public List<string> keyvoidList = new List<string>();
 		public Color keyvoidColor = new Color();
+
+		public List<string> keycList = new List<string>();
+		public Color keycColor = new Color();
 	}
 
 	/// <summary>
@@ -196,6 +207,15 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 		bool m_bEnableStrings = true;
 
 		#region Properties
+		public List<string> Keyc
+		{
+			get { return m_KeyWords.keycList; }
+		}
+		public Color KeycColor
+		{
+			get { return m_KeyWords.keycColor; }
+			set { m_KeyWords.keycColor = value; }
+		}
 		public List<string> Keyvoid
 		{
 			get { return m_KeyWords.keyvoidList; }
