@@ -1,4 +1,5 @@
-﻿using System;
+﻿// using KeraLua;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -30,7 +31,7 @@ namespace XYZ_Teleport_1._17._0
             new Thread(() =>
             {
                 Thread.CurrentThread.IsBackground = true;
-                while (true)
+                while (!Program.quit)
                 {
                     if (recallRecordingEnabled && mem != null)
                     {
@@ -363,7 +364,7 @@ namespace XYZ_Teleport_1._17._0
             _list.Add(tempList);
         }
 
-        List<string> luaEnvs = new List<string>();
+        //List<Lua> luaEnvs = new List<Lua>(); // unsure if this is fully embedded ;-; might be broken due to NLua being uninstalled/shitty
 
         private void loadLuaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -375,9 +376,12 @@ namespace XYZ_Teleport_1._17._0
             {
                 if (File.Exists(dlg.FileName))
                 {
-                    string lua = File.ReadAllText(dlg.FileName);
+                    //Lua newEnv = new Lua();
+                    //newEnv.LoadFile(dlg.FileName, "");
 
+                    //newEnv.func
 
+                    //luaEnvs.Add(newEnv); // List the envs so we can call event functions
                 }
             }
         }

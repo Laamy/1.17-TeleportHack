@@ -49,7 +49,7 @@ namespace XYZ_Teleport_1._17._0._Keymap
             // ++e;
 
             new Thread(() => {
-                while (true)
+                while (!Program.quit)
                 {
                     // ++e;
                     try
