@@ -45,7 +45,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
                 "50C",
                 "148"
             }),
-            new IVersion(new string[] // Leave a slot blank if you dont have the offset/dont know how to get it (I dont want to downgrade just to find the gamemode offset :p
+            new IVersion(new string[] // Leave a slot blank if you dont have the offset/dont know how to get it (I dont want to downgrade just to find the gamemode offset :p)
             {
                 "1.16.221",
                 "base+03CDE520,38,50,140,",
@@ -64,6 +64,7 @@ namespace XYZ_Teleport_1._17._0.VersionBase
             Game.localPlayer_XPosition = version.sdk[1];
             Game.localPlayer_Gamemode = version.sdk[2];
             Game.localPlayer_XVelocity = version.sdk[3];
+            Game.localPlayer_XRotation = version.sdk[4];
 
             currentVersion = version;
         }

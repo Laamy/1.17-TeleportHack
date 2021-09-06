@@ -24,6 +24,10 @@ namespace XYZ_Teleport_1._17._0.LuaBase.MLuaBase
             }
         }
 
+        // Would make a transform class but its pointless with what i have currently
+        private static LocalPlayer lp = new LocalPlayer();
+        public RigidBody rigidbody = new RigidBody(lp);
+
         public int gamemode
         {
             get => Game.gamemode;
@@ -40,6 +44,39 @@ namespace XYZ_Teleport_1._17._0.LuaBase.MLuaBase
         {
             get => Game.velocity;
             set => Game.velocity = value;
+        }
+
+        public Vector2 rotation
+        {
+            get => Game.rotation;
+            // set => Game.rotation = value;
+        }
+
+        public Vector3 lVector(float x, float y)
+        {
+            Vector3 tempVec = Base.Vec3(); // create empty vector
+
+            tempVec.x = (float)Math.Cos(x) * (float)Math.Cos(y);
+            tempVec.y = (float)Math.Sin(y);
+            tempVec.z = (float)Math.Sin(x) * (float)Math.Sin(y);
+
+            return tempVec;
+        }
+
+        public Vector3 dirVec
+        {
+            get
+            {
+                Vector3 tempVec;
+
+                float cYaw = rotation.x + 89.9f * (float)Math.PI / 178f;
+                float cPitch = rotation.y * (float)Math.PI / 178f;
+
+                tempVec = lVector(cYaw, cPitch);
+
+                return tempVec;
+            }
+            // set { }
         }
     }
 }

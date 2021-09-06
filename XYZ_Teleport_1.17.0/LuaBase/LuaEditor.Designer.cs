@@ -50,8 +50,12 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NumberDisplay = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,10 +64,11 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.hiToolStripMenuItem});
+            this.hiToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(439, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(456, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -153,7 +158,7 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStrip1.Location = new System.Drawing.Point(0, 294);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(439, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(456, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -214,11 +219,6 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStripLabel3.Text = "(O(";
             this.toolStripLabel3.Click += new System.EventHandler(this.toolStripLabel3_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -227,11 +227,57 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             this.toolStripLabel4.Text = "Execute";
             this.toolStripLabel4.Click += new System.EventHandler(this.toolStripLabel4_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Output";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox1.Location = new System.Drawing.Point(331, 24);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 270);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.NumberDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NumberDisplay.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NumberDisplay.Location = new System.Drawing.Point(0, 24);
+            this.NumberDisplay.Multiline = true;
+            this.NumberDisplay.Name = "textBox2";
+            this.NumberDisplay.ReadOnly = true;
+            this.NumberDisplay.ShortcutsEnabled = false;
+            this.NumberDisplay.Size = new System.Drawing.Size(23, 270);
+            this.NumberDisplay.TabIndex = 3;
+            this.NumberDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.NumberDisplay.WordWrap = false;
+            // 
             // LuaEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 319);
+            this.ClientSize = new System.Drawing.Size(456, 319);
+            this.Controls.Add(this.NumberDisplay);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -270,5 +316,9 @@ namespace XYZ_Teleport_1._17._0.LuaBase
         private System.Windows.Forms.ToolStripTextBox TabSizeBox;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NumberDisplay;
     }
 }

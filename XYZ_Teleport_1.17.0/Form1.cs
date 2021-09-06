@@ -378,7 +378,7 @@ namespace XYZ_Teleport_1._17._0
             }*/
         };
 
-        public static void executeLua(string v)
+        public static Lua executeLua(string v)
         {
             Lua newEnv = new Lua();
 
@@ -393,6 +393,8 @@ namespace XYZ_Teleport_1._17._0
             });
 
             luaEnvs.Add(newEnv); // List the envs so we can call event functions
+
+            return newEnv;
         }
 
         private void luaKeyEvents(object sender, KeyEvent e)

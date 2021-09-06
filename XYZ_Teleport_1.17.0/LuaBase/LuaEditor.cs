@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NLua;
+using NLua.Event;
+using NLua.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,14 +71,53 @@ namespace XYZ_Teleport_1._17._0.LuaBase
             luaTextbox.TextChanged += ValidateLuaFormat;
             luaTextbox.KeyDown += CustomKeys;
             luaTextbox.FontChanged += RecalculateTab;
+            luaTextbox.SelectionChanged += SelectionChanged_Ev;
+            luaTextbox.VScroll += VScroll_Ev;
 
             luaTextbox.Font = new Font(luaTextbox.SelectionFont.FontFamily, 16f);
+            luaTextbox.BorderStyle = BorderStyle.None;
 
             luaTextbox.AcceptsTab = true;
 
             Controls.Add(luaTextbox);
 
             luaTextbox.BringToFront();
+
+            NumberDisplay.MouseDown += deselectEvent;
+
+            Resize += resizeEvent;
+
+            luaTextbox.WordWrap = false;
+
+            NumberDisplay.WordWrap = false;
+            NumberDisplay.ScrollBars = ScrollBars.None;
+        }
+
+        private void resizeEvent(object sender, EventArgs e)
+        {
+            AddLineNumbers();
+        }
+
+        private void deselectEvent(object sender, MouseEventArgs e)
+        {
+            luaTextbox.Select();
+            NumberDisplay.DeselectAll();
+        }
+
+        private void VScroll_Ev(object sender, EventArgs e)
+        {
+            NumberDisplay.Text = "";
+            AddLineNumbers();
+            NumberDisplay.Invalidate();
+        }
+
+        private void SelectionChanged_Ev(object sender, EventArgs e)
+        {
+            Point pt = luaTextbox.GetPositionFromCharIndex(luaTextbox.SelectionStart);
+            if (pt.X == 1)
+            {
+                AddLineNumbers();
+            }
         }
 
         float vSelectionTabSize = 12f;
@@ -86,6 +128,10 @@ namespace XYZ_Teleport_1._17._0.LuaBase
 
             selectionTabSize = selectionTabSize * (luaTextbox.Font.Size);
             luaTextbox.SelectionTabs = new int[] { (int)selectionTabSize, (int)(selectionTabSize * 2), (int)(selectionTabSize * 3), (int)(selectionTabSize * 4) };
+
+            NumberDisplay.Font = luaTextbox.Font;
+            luaTextbox.Select();
+            AddLineNumbers();
         }
 
         private void CustomKeys(object sender, KeyEventArgs e)
@@ -102,11 +148,18 @@ namespace XYZ_Teleport_1._17._0.LuaBase
         private void ValidateLuaFormat(object sender, EventArgs e)
         {
             luaTextbox.ProcessAllLines();
+
+            if (luaTextbox.Text == "")
+            {
+                AddLineNumbers();
+            }
         }
 
         private void LuaEditor_Load(object sender, EventArgs e)
         {
-
+            NumberDisplay.Font = luaTextbox.Font;
+            luaTextbox.Select();
+            AddLineNumbers();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,9 +244,83 @@ namespace XYZ_Teleport_1._17._0.LuaBase
                 Application.Exit();
         }
 
+        Lua l;
+
         private void toolStripLabel4_Click(object sender, EventArgs e)
         {
-            Form1.executeLua(luaTextbox.Text);
+            if (l != null)
+                l.DebugHook -= error;
+            try
+            {
+                l = Form1.executeLua(luaTextbox.Text);
+                l.DebugHook += error;
+            }
+            catch (LuaException ec)
+            {
+                textBox1.AppendText("Fatal error : " + ec.Message + "\r\n\r\n");
+            }
+        }
+
+        private void error(object sender, DebugHookEventArgs e)
+        {
+            textBox1.AppendText("Error on line : " + e.LuaDebug.CurrentLine + "\r\n");
+            textBox1.AppendText("Source : " + e.LuaDebug.Source + "\r\n");
+            textBox1.AppendText("What : " + e.LuaDebug.What + "\r\n\r\n");
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            textBox1.Visible = !textBox1.Visible;
+        }
+
+        public int getWidth()
+        {
+            int w = 25;
+            // get total lines of richTextBox1
+            int line = luaTextbox.Lines.Length;
+
+            if (line <= 99)
+            {
+                w = 20 + (int)luaTextbox.Font.Size;
+            }
+            else if (line <= 999)
+            {
+                w = 30 + (int)luaTextbox.Font.Size;
+            }
+            else
+            {
+                w = 50 + (int)luaTextbox.Font.Size;
+            }
+
+            return w;
+        }
+
+        public void AddLineNumbers()
+        {
+            Point pt = new Point(0, 0);
+
+            int First_Index = luaTextbox.GetCharIndexFromPosition(pt);
+            int First_Line = luaTextbox.GetLineFromCharIndex(First_Index);
+
+            pt.X = ClientRectangle.Width;
+            pt.Y = ClientRectangle.Height;
+
+            int Last_Line = luaTextbox.Lines.Length;
+
+            if (luaTextbox.Lines.Length > 1)
+            {
+                Last_Line -= 1;
+            }
+
+            NumberDisplay.TextAlign = HorizontalAlignment.Center;
+
+            NumberDisplay.Text = "";
+            NumberDisplay.Width = getWidth();
+
+            for (int i = First_Line; i <= Last_Line; i++)
+            {
+                NumberDisplay.Text += i + 1 + "\r\n";
+            }
         }
     }
 }

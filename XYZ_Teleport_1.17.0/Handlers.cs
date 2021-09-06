@@ -45,5 +45,26 @@ namespace XYZ_Teleport_1._17._0
             Vector3 tempVec = new Vector3(v);
             return tempVec;
         }
+        public static Vector3 Vec3()
+        {
+            Vector3 tempVec = new Vector3(0, 0, 0);
+            return tempVec;
+        }
+
+        public static Vector2 Vec2(float _, float v)
+        {
+            Vector2 tempVec = new Vector2(_, v);
+            return tempVec;
+        }
+        public static Vector2 Vec2(string v)
+        {
+            Vector2 tempVec = new Vector2(v);
+            return tempVec;
+        }
+        public static Vector2 Vec2()
+        {
+            Vector2 tempVec = new Vector2(0, 0);
+            return tempVec;
+        }
     }
 }

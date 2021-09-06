@@ -9,6 +9,7 @@ namespace XYZ_Teleport_1._17._0
         public static string localPlayer_XPosition = "4D0";
         public static string localPlayer_Gamemode = "1E08";
         public static string localPlayer_XVelocity = "50C";
+        public static string localPlayer_XRotation = "148";
 
         public static void teleport(AABB advancedAxis) // More advanced axis teleportation
         {
@@ -68,6 +69,20 @@ namespace XYZ_Teleport_1._17._0
                 Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 4), "float", value.y.ToString());
                 Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XVelocity, 8), "float", value.z.ToString());
             }
+        }
+
+        public static Vector2 rotation
+        {
+            get
+            {
+                return Base.Vec2(Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XRotation, 0)) + "," +
+                    Form1.handle.mem.ReadFloat(localPlayer + HexHandler.addBytes(localPlayer_XRotation, 4)));
+            } // You need an extra pointer to control rotations
+            /*set
+            {
+                Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XRotation, 0), "float", value.x.ToString());
+                Form1.handle.mem.WriteMemory(localPlayer + HexHandler.addBytes(localPlayer_XRotation, 4), "float", value.y.ToString());
+            }*/
         }
     }
 
@@ -203,6 +218,36 @@ namespace XYZ_Teleport_1._17._0
         public override string ToString()
         {
             return x + "," + y + "," + z;
+        }
+    }
+
+    public class Vector2
+    {
+        public float x;
+        public float y;
+        public Vector2(float x, float y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+        public Vector2(string position)
+        {
+            try
+            {
+                string[] parsedStr = position.Replace(" ", "").Split(',');
+                this.x = Convert.ToSingle(parsedStr[0]);
+                this.y = Convert.ToSingle(parsedStr[1]);
+            }
+            catch
+            {
+                string[] parsedStr = position.Replace(" ", "").Split(',');
+                this.x = HexHandler.toLong(parsedStr[0]);
+                this.y = HexHandler.toLong(parsedStr[1]);
+            }
+        }
+        public override string ToString()
+        {
+            return x + "," + y;
         }
     }
     public class AABB
